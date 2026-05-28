@@ -12,7 +12,7 @@ import ru.z.kegerestwebservice.entity.common.CommonEntity;
 @NoArgsConstructor
 @Builder
 @Data
-public class Courses implements CommonEntity<Long> {
+public class Courses extends CommonEntity<Long> {
     @Id
     private Long id;
     private String name;

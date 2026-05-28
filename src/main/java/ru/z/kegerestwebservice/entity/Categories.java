@@ -14,12 +14,10 @@ import ru.z.kegerestwebservice.entity.common.CommonEntity;
 @NoArgsConstructor
 @Builder
 @Data
-public class Categories implements CommonEntity<Long> {
+public class Categories extends CommonEntity<Long> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private int category_id;
-    private int content;
-    private String content_type;
     private String name;
+    private String theory;
 }

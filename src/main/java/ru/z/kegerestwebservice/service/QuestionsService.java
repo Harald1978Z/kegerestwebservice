@@ -16,6 +16,6 @@ public class QuestionsService extends CommonService<Questions, Long> {
     }
 
     public List<Questions> findQuestionsRepositoryName(String fragment){
-        return questionsRepository.findQuestionsByQuestion_text(fragment);
+        return questionsRepository.findQuestionsByQuestionText(fragment);
     }
 }

@@ -16,6 +16,6 @@ public class StudentWorksService extends CommonService<StudentWorks, Long> {
     }
 
     public List<StudentWorks> findStudentWorksByAnswer_text(String fragment){
-        return studentWorksRepository.findStudentWorksByAnswer_text(fragment);
+        return studentWorksRepository.findStudentWorksByAnswerText(fragment);
     }
 }

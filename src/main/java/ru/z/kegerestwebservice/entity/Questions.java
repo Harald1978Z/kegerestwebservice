@@ -12,12 +12,12 @@ import ru.z.kegerestwebservice.entity.common.CommonEntity;
 @NoArgsConstructor
 @Builder
 @Data
-public class Questions implements CommonEntity<Long> {
+public class Questions extends CommonEntity<Long> {
     @Id
     private Long id;
-    private int course_id;
-    private int category_id;
-    private String question_text;
-    private String Answer_text;
+    private Long courseId;
+    private Long categoryId;
+    private String questionText;
+    private String answerText;
     private String descriptions;
 }

@@ -14,7 +14,7 @@ import java.sql.Date;
 @NoArgsConstructor
 @Data
 @Builder
-public class User implements CommonEntity<Long> {
+public class User extends CommonEntity<Long> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
