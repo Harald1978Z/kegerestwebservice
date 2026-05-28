@@ -8,7 +8,7 @@ import ru.z.kegerestwebservice.service.CategoriesService;
 import java.util.List;
 
 @RestController
-@RequestMapping(("categoryes"))
+@RequestMapping(("categories"))
 @AllArgsConstructor
 public class CategoriesController {
     private final CategoriesService categoriesService;

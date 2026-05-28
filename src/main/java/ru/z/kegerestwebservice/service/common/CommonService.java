@@ -8,20 +8,22 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import ru.z.kegerestwebservice.entity.common.CommonEntity;
 
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Optional;
 
 @Slf4j
-public class CommonService<T extends CommonEntity<ID>, ID> {
-
+public class CommonService<T extends CommonEntity<ID>, ID extends Serializable> {
     private final JpaRepository<T, ID> repository;
+
     public CommonService(JpaRepository<T, ID> repository) {
         this.repository = repository;
     }
+
     public List<T> getAll() {
-        Pageable pageable = PageRequest.of(1,5, Sort.by("id"));
-        return repository.findAll(pageable).stream().toList();
-       // return repository.findAll();
+        //Pageable pageable = PageRequest.of(1, 5, Sort.by("id"));
+        //return repository.findAll(pageable).stream().toList();
+         return repository.findAll();
     }
 
     public T getById(ID id) {
@@ -35,11 +37,12 @@ public class CommonService<T extends CommonEntity<ID>, ID> {
     public void deleteById(ID id) {
         repository.deleteById(id);
     }
+
     public String delete(T entity) {
-        String msg="";
+        String msg = "";
         Optional<T> tryFindUnit = repository.findById(entity.getId());
         tryFindUnit.ifPresent(t -> repository.delete(t));
-        msg = tryFindUnit.map(t->new StringBuilder()
+        msg = tryFindUnit.map(t -> new StringBuilder()
                         .append("deleted  \n")
                         .append(t.toString())
                         .toString())

@@ -16,6 +16,6 @@ public class StudentsService extends CommonService<Students, Long> {
     }
 
     public List<Students> findStudentsByFirst_nameAndLast_name(String fragment, String fragment1){
-        return studentsRepository.findStudentsByFirst_nameAndLast_name(fragment,fragment1);
+        return studentsRepository.findStudentsByFirstNameAndLastName(fragment,fragment1);
     }
 }

@@ -15,12 +15,12 @@ import java.util.Date;
 @NoArgsConstructor
 @Builder
 @Data
-public class StudentWorks implements CommonEntity<Long> {
+public class StudentWorks extends CommonEntity<Long> {
     @Id
     private Long id;
-    private int student_id;
-    private int work_id;
-    private int question_id;
-    private Date work_date;
-    private String answer_text;
+    private Long studentId;
+    private Long workId;
+    private Long questionId;
+    private Date workDate;
+    private String answerText;
 }

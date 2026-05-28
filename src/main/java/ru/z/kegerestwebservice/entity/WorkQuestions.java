@@ -12,9 +12,9 @@ import ru.z.kegerestwebservice.entity.common.CommonEntity;
 @NoArgsConstructor
 @Builder
 @Data
-public class WorkQuestions implements CommonEntity<Long> {
+public class WorkQuestions extends CommonEntity<Long> {
     @Id
     private Long id;
-    private int work_id;
-    private int question_id;
+    private Long workId;
+    private Long questionId;
 }
